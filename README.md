@@ -45,21 +45,21 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 * 8/13/2020 21:00:00 - 8/13/2020 23:00:00: SSR: Partial (no GPS L5 code and phase biases), OSR: Y
 * 9/4/2020 17:00:00 - 9/4/2020 18:00:00: SSR: Partial (no GPS L5 code and phase biases), OSR: Y
 * 9/4/2020 17:00:00 - 9/4/2020 19:00:00: SSR: Partial (no GPS L5 code and phase biases), OSR: N
-* 1/4/2021 22:00:00 - 1/5/2021 0:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 1/5/2021 21:00:00 - 1/5/2021 22:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 1/5/2021 21:00:00 - 1/5/2021 23:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 3/10/2021 23:00:00 - 3/11/2021 0:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 3/16/2021 23:00:00 - 3/17/2021 0:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 4/2/2021 20:00:00 - 4/2/2021 22:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 4/8/2021 21:00:00 - 4/8/2021 22:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 4/15/2021 21:00:00 - 4/15/2021 23:00:00: SSR: Y, OSR: Y (no RTCM3)
-* 4/21/2021 16:00:00 - 4/21/2021 19:00:00: SSR: Y, OSR: Y (no RTCM3)
+* 1/4/2021 22:00:00 - 1/5/2021 0:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 1/5/2021 21:00:00 - 1/5/2021 22:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 1/5/2021 21:00:00 - 1/5/2021 23:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 3/10/2021 23:00:00 - 3/11/2021 0:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 3/16/2021 23:00:00 - 3/17/2021 0:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 4/2/2021 20:00:00 - 4/2/2021 22:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 4/8/2021 21:00:00 - 4/8/2021 22:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 4/15/2021 21:00:00 - 4/15/2021 23:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
+* 4/21/2021 16:00:00 - 4/21/2021 19:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
 
 
 ## Corrections
 
 ### OSR
-The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not available for more recent files (from 2021).
+The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021).
 
 ### SSR
 The SSR data was unpacked from Swift binary protocol to a readable JSON file. The SSR corrections include orbits, clock and phase biases as well as precise atmospheric corrections covering a large part of California. Some notes:
