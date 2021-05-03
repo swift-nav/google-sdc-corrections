@@ -18,11 +18,11 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 ## Corrections
 
 ### OSR
-The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021), but will be available soon.
+The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open-source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021), but will be available soon.
 
 ### SSR
 The SSR data was unpacked from Swift binary protocol to a readable JSON file. The SSR corrections include orbits, clock and phase biases as well as precise atmospheric corrections covering a large part of California. Some notes:
-* the 2020 files use a different file format that is different from the 2021 files. The description of the messages is provided in the documentation in the _spec_ folder.
+* the 2020 files use a message format that is different from the 2021 files. The description of the messages is provided in the documentation in the _spec_ folder.
 * the SSR data for 2020 does not contain L5 code and phase biases for GPS, only for Galileo.
 
 
