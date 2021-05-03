@@ -59,7 +59,7 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 ## Corrections
 
 ### OSR
-The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021).
+The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021), but will be available soon.
 
 ### SSR
 The SSR data was unpacked from Swift binary protocol to a readable JSON file. The SSR corrections include orbits, clock and phase biases as well as precise atmospheric corrections covering a large part of California. Some notes:
@@ -68,7 +68,7 @@ The SSR data was unpacked from Swift binary protocol to a readable JSON file. Th
 
 
 ## JSON format
-The JSON files have been tar compressed to preserve space. They need to be extracted before use. There are many JSON loaders and parsers available online for most popular programming languages (Python, C, C++, ...). The format of the messages in the JSON files is described in the _spec_ folder.  The PDF file gives a complete description of each message. In the JSON files the messages can be identified by the `msg_type` field, which contains the decimal message type number. For example, message type number `138` for message `MSG_EPHEMERIS_GPS`. Note that the `payload` field of the message can be safely discarded. This simply contains the packed version of the message content.
+The JSON files have been zip compressed to preserve space. They need to be extracted before use. There are many JSON loaders and parsers available online for most popular programming languages (Python, C, C++, ...). The format of the messages in the JSON files is described in the _spec_ folder.  The PDF file gives a complete description of each message. In the JSON files the messages can be identified by the `msg_type` field, which contains the decimal message type number. For example, message type number `138` for message `MSG_EPHEMERIS_GPS`. Note that the `payload` field of the message can be safely discarded. This simply contains the packed version of the message content.
 
 
 &nbsp;
