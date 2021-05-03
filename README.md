@@ -15,6 +15,27 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 * _spec_: description of all messages in PDF and YAML format.
 
 
+## Corrections
+
+### OSR
+The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021), but will be available soon.
+
+### SSR
+The SSR data was unpacked from Swift binary protocol to a readable JSON file. The SSR corrections include orbits, clock and phase biases as well as precise atmospheric corrections covering a large part of California. Some notes:
+* the 2020 files use a different file format that is different from the 2021 files. The description of the messages is provided in the documentation in the _spec_ folder.
+* the SSR data for 2020 does not contain L5 code and phase biases for GPS, only for Galileo.
+
+
+## Swift Navigation Binary Protocol (SBP)
+All corrections data is also provided in SBP format. SBP is a fast, simple, and minimal binary protocol for communicating with Swift devices. You can integrate the client libraries from [libsbp](https://github.com/swift-nav/libsbp) with your existing software to read the SBP data directly. The client libraries are available in a variety of languages (Python, C, Java, Rust, ...). The latest version of libsbp can be found here: [github.com/swift-nav/libsbp/releases/tag/v3.4.7](https://github.com/swift-nav/libsbp/releases/tag/v3.4.7).
+
+
+## JSON format
+The JSON files have been zip compressed to preserve space. They need to be extracted before use. There are many JSON loaders and parsers available online for most popular programming languages (Python, C, C++, ...). The format of the messages in the JSON files is described in the _spec_ folder.  The PDF file gives a complete description of each message. In the JSON files the messages can be identified by the `msg_type` field, which contains the decimal message type number. For example, message type number `138` for message `MSG_EPHEMERIS_GPS`. Note that the `payload` field of the message can be safely discarded. This simply contains the packed version of the message content.
+
+If you are using Python, you can use the [libsbp](https://github.com/swift-nav/libsbp) library to load the message from the JSON files directly. The latest version of libsbp can be found here: [github.com/swift-nav/libsbp/releases/tag/v3.4.7](https://github.com/swift-nav/libsbp/releases/tag/v3.4.7).
+
+
 ## Drive overview
 * 5/14/2020 22:00:00 - 5/14/2020 23:00:00: SSR: N, OSR: Y
 * 5/15/2020 0:00:00 - 5/15/2020 1:00:00: SSR: N, OSR: Y
@@ -56,27 +77,6 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 * 4/8/2021 21:00:00 - 4/8/2021 22:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
 * 4/15/2021 21:00:00 - 4/15/2021 23:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
 * 4/21/2021 16:00:00 - 4/21/2021 19:00:00: SSR: Y, OSR: Y (RTCM3 coming soon)
-
-
-## Corrections
-
-### OSR
-The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open source software RTKLIB can convert the data to RINEX. Note that RTCM3 files are not yet available for more recent files (from 2021), but will be available soon.
-
-### SSR
-The SSR data was unpacked from Swift binary protocol to a readable JSON file. The SSR corrections include orbits, clock and phase biases as well as precise atmospheric corrections covering a large part of California. Some notes:
-* the 2020 files use a different file format that is different from the 2021 files. The description of the messages is provided in the documentation in the _spec_ folder.
-* the SSR data for 2020 does not contain L5 code and phase biases for GPS, only for Galileo.
-
-
-## JSON format
-The JSON files have been zip compressed to preserve space. They need to be extracted before use. There are many JSON loaders and parsers available online for most popular programming languages (Python, C, C++, ...). The format of the messages in the JSON files is described in the _spec_ folder.  The PDF file gives a complete description of each message. In the JSON files the messages can be identified by the `msg_type` field, which contains the decimal message type number. For example, message type number `138` for message `MSG_EPHEMERIS_GPS`. Note that the `payload` field of the message can be safely discarded. This simply contains the packed version of the message content.
-
-If you are using Python, you can use the [libsbp](https://github.com/swift-nav/libsbp) library to load the message from the JSON files directly. The latest version of libsbp can be found here: [github.com/swift-nav/libsbp/releases/tag/v3.4.7](https://github.com/swift-nav/libsbp/releases/tag/v3.4.7).
-
-
-## Swift Navigation Binary Protocol (SBP) format
-All corrections data is also provided in SBP format. SBP is a fast, simple, and minimal binary protocol for communicating with Swift devices. You can integrate the client libraries from [libsbp](https://github.com/swift-nav/libsbp) with your existing software to read the SBP data directly. The client libraries are available in a variety of languages (Python, C, Java, Rust, ...). The latest version of libsbp can be found here: [github.com/swift-nav/libsbp/releases/tag/v3.4.7](https://github.com/swift-nav/libsbp/releases/tag/v3.4.7).
 
 
 &nbsp;
