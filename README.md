@@ -1,15 +1,17 @@
-# GNSS correction data for the Google Smartphone Decimeter Challenge (SDC)
+# GNSS corrections data for the Google Smartphone Decimeter Challenge (SDC)
 
-This repo contains the GNSS correction data for Google's 2021 Smartphone Decimeter Challenge (SDC). The data in this repo is provided by Swift Navigation as is and without support.
+This repo contains the GNSS corrections data for [Google's 2021 Smartphone Decimeter Challenge (SDC)](https://www.swiftnav.com/google-smartphone-decimeter-challenge). The data in this repo is provided by Swift Navigation as is and without support.
 
-The repo contains SSR and OSR correction data. OSR correction data is provided as Swift's protocol messages in JSON format and, where possible, in RTCM3 MSM5. The SSR data is provided as Swift's protocol messages in JSON format. The description of the JSON format is provided in the _spec_ folder. In the _spec_ folder there is a PDF document with a description of all messages. There are also YAML files with the message definition for those who want to automate the loading or conversion of the data.
+The repo contains _SSR_ and _OSR_ corrections data. OSR corrections data is provided as Swift's protocol messages in binary format (SBP) and human readable JSON format. Where possible, the data is also provided in RTCM3 MSM5. The SSR data is provided as Swift's protocol messages in binary format (SBP) and human readable JSON format.
 
-Note that not all drives of the Google Smartphone Decimeter Challenge have both SSR and OSR. An overview is provided below.
+In the _spec_ folder there is a PDF document with a description of all messages. There are also YAML files with the message definition for those who want to automate the loading or conversion of the data. You can also use the client libraries from Swift's open-source [libsbp](https://github.com/swift-nav/libsbp) to read the binary data in Swift Navigation Binary Protocol (SBP) format directly. The client libraries are available in a variety of languages (Python, C, Java, Rust, ...).
+
+Note that not all drives of the Google Smartphone Decimeter Challenge have both SSR and OSR corrections. An overview is provided below.
 
 
 ## Folder structure
-* _osr_: JSON and RTCM3 MSM5 files containing the OSR data.
-* _ssr_: JSON files containing the SSR messages.
+* _osr_: SBP, JSON and RTCM3 MSM5 files containing the OSR data.
+* _ssr_: SBP and JSON files containing the SSR messages.
 * _spec_: description of all messages in PDF and YAML format.
 
 
@@ -69,6 +71,12 @@ The SSR data was unpacked from Swift binary protocol to a readable JSON file. Th
 
 ## JSON format
 The JSON files have been zip compressed to preserve space. They need to be extracted before use. There are many JSON loaders and parsers available online for most popular programming languages (Python, C, C++, ...). The format of the messages in the JSON files is described in the _spec_ folder.  The PDF file gives a complete description of each message. In the JSON files the messages can be identified by the `msg_type` field, which contains the decimal message type number. For example, message type number `138` for message `MSG_EPHEMERIS_GPS`. Note that the `payload` field of the message can be safely discarded. This simply contains the packed version of the message content.
+
+If you are using Python, you can use the [libsbp](https://github.com/swift-nav/libsbp) library to load the message from the JSON files directly. The latest version of libsbp can be found here: [github.com/swift-nav/libsbp/releases/tag/v3.4.7](https://github.com/swift-nav/libsbp/releases/tag/v3.4.7).
+
+
+## Swift Navigation Binary Protocol (SBP) format
+All corrections data is also provided in SBP format. SBP is a fast, simple, and minimal binary protocol for communicating with Swift devices. You can integrate the client libraries from [libsbp](https://github.com/swift-nav/libsbp) with your existing software to read the SBP data directly. The client libraries are available in a variety of languages (Python, C, Java, Rust, ...). The latest version of libsbp can be found here: [github.com/swift-nav/libsbp/releases/tag/v3.4.7](https://github.com/swift-nav/libsbp/releases/tag/v3.4.7).
 
 
 &nbsp;
