@@ -10,7 +10,7 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 
 
 ## Folder structure
-* _osr_: SBP, JSON and RTCM3 MSM5 files containing the OSR data.
+* _osr_: SBP, JSON, RTCM3 MSM5 and RINEX v3.03 files containing the OSR data.
 * _ssr_: SBP and JSON files containing the SSR messages.
 * _spec_: description of all messages in PDF and YAML format.
 
@@ -18,7 +18,7 @@ Note that not all drives of the Google Smartphone Decimeter Challenge have both 
 ## Corrections
 
 ### OSR
-The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open-source software RTKLIB can convert the data to RINEX.
+The OSR data was unpacked from Swift binary protocol to a readable JSON file. Where possible, the OSR corrections are also provided in RTCM3 MSM5 format. Please refer to the RTCM3 standard on how to decode these messages. Alternatively you can use one of the many tools available online to convert these files. For example the open-source software RTKLIB can convert the data to RINEX. RINEX v3.03 files are also provided.
 
 ### SSR
 The SSR data was unpacked from Swift binary protocol to a readable JSON file. The SSR corrections include orbits, clock and phase biases as well as precise atmospheric corrections covering a large part of California. Some notes:
